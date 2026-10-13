@@ -144,17 +144,19 @@ Checkout p95 latency не перевищує погоджений threshold.
 
 ## AI та Time to Market, рівень 90+
 
-Stakeholders очікують, що AI coding tools скоротять major-feature Time to Market з 4 місяців до 1 місяця. Виконайте аналіз з `docs/ai-time-to-market.md`:
+Stakeholders очікують, що AI coding tools скоротять major-feature Time to Market з 4 місяців до 1 місяця. Виконайте аналіз з `docs/ai-time-to-market.md` і запропонуйте власний реалістичний target або target range:
 
 1. Перевірте assumptions.
-2. Визначте stages, які AI реально може прискорити.
-3. Знайдіть remaining bottlenecks.
-4. Розділіть architecture constraints і process constraints.
-5. Поясніть, чи реалістичний 1 місяць.
-6. Опишіть потрібні зміни для досягнення цілі.
-7. Визначте нові risks від більшого implementation throughput.
+2. Покажіть окрему оцінку для кожного delivery stage.
+3. Визначте stages, які AI реально може прискорити.
+4. Знайдіть remaining bottlenecks.
+5. Розділіть architecture constraints і process constraints.
+6. Поясніть, чи реалістичний 1 місяць.
+7. Запропонуйте інший target, якщо він краще відповідає evidence.
+8. Опишіть prerequisites, investments та risks для свого target.
+9. Визначте нові risks від більшого implementation throughput.
 
-Прийнятними є обидва висновки, якщо вони спираються на evidence. Розгляньте local optimization і end-to-end throughput.
+Прийнятними є різні результати, зокрема 1, 2, 3 місяці або аргументований range. Розгляньте local optimization, end-to-end throughput, uncertainty та migration cost. Наперед визначеної правильної тривалості немає.
 
 ## Deliverables
 
@@ -238,7 +240,7 @@ How we will measure success
 - пояснено хоча б один non-obvious trade-off;
 - проаналізовано AI Time to Market scenario;
 - розрізнено implementation speed та end-to-end delivery speed;
-- висновок про ціль 4 місяці -> 1 місяць можна захистити.
+- запропонований Time to Market target можна захистити через stage estimates та evidence.
 
 ### 100 балів
 
@@ -275,3 +277,4 @@ How we will measure success
 17. Чого AI не усуває?
 18. Який stage зараз найбільше впливає на Time to Market?
 19. Що має змінитися для місячного delivery cycle?
+20. Який target ви вважаєте реалістичним і які дані можуть змусити вас його переглянути?

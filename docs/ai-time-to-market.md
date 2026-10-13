@@ -29,6 +29,22 @@ Implementation: 40 days -> 10 days
 
 Для Analysis, Integration, Validation і Release автоматичне скорочення не задано. Команда вже помічає, що більші PR довше чекають на review, а зміни в кількох modules потребують більше integration testing.
 
+## Дані для planning discussion
+
+Команда зібрала попередні оцінки можливих improvements. Це не гарантоване скорочення строків і не затверджений plan.
+
+| Stage | Поточне значення | Можливий improvement | Умова або trade-off |
+| --- | ---: | ---: | --- |
+| Analysis | 20 days | скорочення на 2-5 days | AI-assisted research, швидший prototype та доступність stakeholders |
+| Implementation | 40 days | до 10-20 days | результат залежить від complexity, review capacity та якості generated code |
+| Integration | 25 days | скорочення на 4-10 days | explicit contracts, менші changesets, contract tests або кращі module boundaries |
+| Validation | 25 days | скорочення на 5-10 days | додатковий test environment, automation та parallel testing |
+| Release | 10 days | скорочення на 2-6 days | частіші release windows, менший deployment scope або independent deployment |
+
+Improvements потребують різних investments. Наприклад, новий test environment має infrastructure cost, independent deployment додає operational complexity, а contract tests спершу треба створити й підтримувати. Деякі improvements можуть overlap, тому їх не можна автоматично підсумовувати як незалежні.
+
+Ці ranges навмисно допускають різні прогнози. Student може обґрунтувати conservative target, aggressive target або target range. Сильний прогноз враховує prerequisites, uncertainty, одноразову migration cost і те, коли benefit стане доступним.
+
 ## Доступні спостереження
 
 - Developers використовують AI для scaffolding, tests, refactoring suggestions і documentation drafts.
@@ -41,16 +57,19 @@ Implementation: 40 days -> 10 days
 
 ## Завдання для рівня 90+
 
-Проаналізуйте stakeholder expectation і дайте відповідь на питання:
+Проаналізуйте stakeholder expectation і запропонуйте власний реалістичний target або target range для major-feature Time to Market. Це не обов'язково має бути 1 місяць. Покажіть розрахунок для кожного delivery stage та дайте відповідь на питання:
 
-1. Які stages AI реально може прискорити в цьому контексті?
-2. Які bottlenecks залишаться або перемістяться?
-3. Які architecture constraints обмежують throughput?
-4. Які process constraints не вирішуються генерацією коду?
-5. Чи реалістична ціль 1 місяць за наявних умов?
-6. Що саме має змінитися, щоб ціль стала реалістичною?
-7. Які нові risks виникають зі зростанням implementation throughput?
-8. Як виміряти фактичний вплив AI, не покладаючись лише на LOC або кількість PR?
+1. Який Time to Market ви прогнозуєте після запропонованих improvements?
+2. Які assumptions лежать в основі кожної оцінки stage?
+3. Які stages AI реально може прискорити в цьому контексті?
+4. Які bottlenecks залишаться або перемістяться?
+5. Які architecture constraints обмежують throughput?
+6. Які process constraints не вирішуються генерацією коду?
+7. Чи реалістична ціль 1 місяць за наявних умов?
+8. Що саме має змінитися, щоб ціль стала реалістичною?
+9. Які нові risks виникають зі зростанням implementation throughput?
+10. Як виміряти фактичний вплив AI, не покладаючись лише на LOC або кількість PR?
+11. Які evidence змусять вас переглянути прогноз після першого major feature?
 
 Можна використати модель:
 
@@ -58,4 +77,4 @@ Implementation: 40 days -> 10 days
 TTM = Analysis + Implementation + Integration + Validation + Release
 ```
 
-Висновок може підтримати або заперечити ціль 1 місяць. Оцінюється evidence, assumptions, trade-offs і system-wide reasoning.
+Висновок може підтримати або заперечити ціль 1 місяць та запропонувати інший target. Оцінюється evidence, assumptions, trade-offs і system-wide reasoning, а не збіг з наперед визначеним числом.
